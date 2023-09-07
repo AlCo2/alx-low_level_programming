@@ -1,8 +1,11 @@
 #include <stdio.h>
 
-/* 
- *this is a function 
- */
+/**
+ * main-Entry point
+ * Description:'the program's description'
+ * Return: Always 0 (success)
+*/
+
 int main(void)
 {
 printf("Size of a char: %d byte(s)\n", sizeof(char));
