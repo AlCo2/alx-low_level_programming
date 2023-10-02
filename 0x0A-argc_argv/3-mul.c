@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include "main.h"
 /**
 * main-This Is my function
 * Description: this is a function
@@ -13,7 +15,8 @@ int main(int argc, char** argv)
         printf("Error");
         return (1);
     }
-    int result = atoi(*argv[1]) * atoi(*argv[2]);
+    int result;
+    result = atoi(*argv[1]) * atoi(*argv[2]);
     printf("%d\n", result);
     return (0);
 }
