@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <ctype.h>
+#include "main.h"
 /**
 * main-This Is my function
 * Description: this is a function
