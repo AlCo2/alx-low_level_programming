@@ -1,12 +1,19 @@
 #include <stdio.h>
 #include <ctype.h>
-
-int main(int argc, char** argv){
-    if(argc==1){
+/**
+* main-This Is my function
+* Description: this is a function that print total of arg passed
+* return: success(0)
+*/
+int main(int argc, char** argv)
+{
+    if(argc==1)
+    {
         printf("0\n");
         return 0;
     }
-    if(!isdigit(*argv[1]) || !isdigit(*argv[2])){
+    if(!isdigit(*argv[1]) || !isdigit(*argv[2]))
+    {
         printf("Error\n");
         return 1;
     }
