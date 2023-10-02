@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <ctype.h>
+#include <stdlib.h>
 #include "main.h"
 /**
 * main-This Is my function
@@ -21,7 +22,7 @@ int main(int argc, char** argv)
         printf("Error\n");
         return (1);
     }
-    sum = atoi(*argv[1])+atoi(*argv[2]);
+    sum = atoi(argv[1])+atoi(argv[2]);
     printf("%d\n", sum);
     return 0;
 }
