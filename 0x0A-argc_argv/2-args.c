@@ -1,14 +1,16 @@
 #include <stdio.h>
 /**
 * main-This Is my function
-* Description: this is a function that print total of arg passed
-* return: success(0)
+* Description: this is a function
+* @argc: total argc
+* @argv: argument passed
+* Return: success(0)
 */
 int main(int argc, char** argv)
 {
-    while(argc--)
+    while (argc--)
     {
         printf("%s\n", *argv++);
     }
-    return 0;
+    return (0);
 }
