@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "main.h"
 /**
 * main-This Is my function
 * Description: this is a function
@@ -8,9 +9,9 @@
 */
 int main(int argc, char** argv)
 {
-    while (argc--)
-    {
-        printf("%s\n", *argv++);
-    }
-    return (0);
+while (argc--)
+{
+    printf("%s\n", *argv++);
+}
+return (0);
 }
