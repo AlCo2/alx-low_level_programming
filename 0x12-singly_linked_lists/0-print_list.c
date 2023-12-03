@@ -1,8 +1,15 @@
+#include <stdio.h>
 #include "lists.h"
-
+/**
+ * print_list - function that print linked_list
+ *
+ * @h: linked_list
+ *
+ * Return: The total elements
+*/
 size_t print_list(const list_t *h)
 {
-	size_t i = 0;
+	int i = 0;
 
 	while (h != NULL)
 	{
