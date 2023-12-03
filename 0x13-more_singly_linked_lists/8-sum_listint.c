@@ -2,7 +2,7 @@
 #include "lists.h"
 
 /**
- * sum_lisint - function that sum all the val in list
+ * sum_listint - function that sum all the val in list
  *
  * @head: linked list head
  *
