@@ -12,12 +12,15 @@
 size_t print_listint_safe(const listint_t *head)
 {
 	int count = 0;
-	if(head == NULL)
-		exit(98);
-	while (head != NULL)
+	const listint_t *temp = head->next;
+
+	while (head != NULL && temp->next != NULL)
 	{
 		printf("%d\n", head->n);
+		if (head == temp)
+			exit(98);
 		head = head->next;
+		temp = temp->next->next;
 		count++;
 	}
 	return (count);
