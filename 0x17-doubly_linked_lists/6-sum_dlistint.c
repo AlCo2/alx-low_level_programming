@@ -3,14 +3,16 @@
 #include "lists.h"
 
 /**
- * free_dlistint - funtion to free doubly linked list
+ * sum_dlistint - sum value of doubly linked list
  *
  * @head: doubly linked list
+ *
+ * Return: The sum
 */
 
-void free_dlistint(dlistint_t *head)
+int sum_dlistint(dlistint_t *head)
 {
-	dlistint_t *temp;
+	int sum = 0;
 
 	if (head != NULL)
 	{
@@ -21,8 +23,8 @@ void free_dlistint(dlistint_t *head)
 	}
 	while (head != NULL)
 	{
-		temp = head->next;
-		free(head);
-		head = temp;
+		sum += head->n;
+		head = head->next;
 	}
+	return (sum);
 }
