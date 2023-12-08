@@ -40,7 +40,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		count++;
 	}
 	if (count < idx - 1)
-		return NULL;
+		return (NULL);
 	save = temp->next;
 	temp->next = new_node;
 	new_node->prev = temp;
