@@ -2,7 +2,7 @@
 
 /**
  * hash_table_create - function to create HashTable
- * 
+ *
  * @size: HashTable size
  *
  * Return: HashTable
