@@ -10,13 +10,14 @@
 */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *new_item = create_item(key, value);
+	hash_node_t *new_item;
 	unsigned long int index = key_index((const unsigned char *)key, ht->size);
 	hash_node_t *temp = ht->array[index];
 	char *value_cpy;
 
 	if (*key == '\0' || key == NULL || value == NULL || ht == NULL)
 		return (0);
+	new_item = create_item(key, value);
 	if (new_item == NULL)
 		return (0);
 	if (temp == NULL)
