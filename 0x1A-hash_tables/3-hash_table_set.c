@@ -13,9 +13,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *new_item;
 	unsigned long int index = key_index((const unsigned char *)key, ht->size);
 	hash_node_t *temp = ht->array[index];
-	char *value_cpy;
 
-	if (*key == '\0' || key == NULL || value == NULL || ht == NULL)
+	if (*key == '\0' || !key || !value || !ht)
 		return (0);
 	new_item = create_item(key, value);
 	if (new_item == NULL)
@@ -31,9 +30,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		{
 			if (strcmp(key, temp->key) == 0)
 			{
-				value_cpy = strdup(value);
 				free(temp->value);
-				temp->value = value_cpy;
+				temp->value = strdup(value);
+				if (temp->value == NULL)
+					return (0);
 				return (1);
 			}
 			temp = temp->next;
@@ -58,17 +58,15 @@ hash_node_t *create_item(const char *key, const char *value)
 
 	if (item == NULL)
 		return (NULL);
-	item->key = malloc(strlen(key) + 1);
+	item->key = strdup(key);
 	if (item->key == NULL)
 		return (NULL);
-	item->value = malloc(strlen(value) + 1);
+	item->value = strdup(value);
 	if (item->value == NULL)
 	{
 		free(item->key);
 		free(item);
 		return (NULL);
 	}
-	strcpy(item->key, key);
-	strcpy(item->value, value);
 	return (item);
 }
