@@ -61,5 +61,5 @@ hash_node_t *create_item(const char *key, const char *value)
 		return (NULL);
 	strcpy(item->key, key);
 	strcpy(item->value, value);
-	return item;
+	return (item);
 }
