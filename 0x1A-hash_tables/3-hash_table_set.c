@@ -28,36 +28,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		}
 		temp = temp->next;
 	}
-	new_item = create_item(key, value);
+	new_item = malloc(sizeof(hash_node_t));
 	if (new_item == NULL)
 		return (0);
+	new_item->key = strdup(key);
+	new_item->value = strdup(value);
 	new_item->next = ht->array[index];
 	ht->array[index] = new_item;
 	return (1);
 }
-/**
- * create_item - function to create items
- *
- * @key: the key
- * @value: the value
- *
- * Return: created item
-*/
-hash_node_t *create_item(const char *key, const char *value)
-{
-	hash_node_t *item = malloc(sizeof(hash_node_t));
 
-	if (item == NULL)
-		return (NULL);
-	item->key = strdup(key);
-	if (item->key == NULL)
-		return (NULL);
-	item->value = strdup(value);
-	if (item->value == NULL)
-	{
-		free(item->key);
-		free(item);
-		return (NULL);
-	}
-	return (item);
-}
