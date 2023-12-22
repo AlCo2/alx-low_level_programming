@@ -17,5 +17,6 @@ int main(void)
     hash_table_set(ht, "hetairas", "lolo");
     hash_table_set(ht, "mentioner", "dadad");
 
+    hash_table_set(ht, "", "");
     return (EXIT_SUCCESS);
 }
