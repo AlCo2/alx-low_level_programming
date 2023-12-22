@@ -16,33 +16,24 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (*key == '\0' || !key || !value || !ht)
 		return (0);
+	while (temp != NULL)
+	{
+		if (strcmp(key, temp->key) == 0)
+		{
+			free(temp->value);
+			temp->value = strdup(value);
+			if (temp->value == NULL)
+				return (0);
+			return (1);
+		}
+		temp = temp->next;
+	}
 	new_item = create_item(key, value);
 	if (new_item == NULL)
 		return (0);
-	if (temp == NULL)
-	{
-		ht->array[index] = new_item;
-		return (1);
-	}
-	else
-	{
-		while (temp != NULL)
-		{
-			if (strcmp(key, temp->key) == 0)
-			{
-				free(temp->value);
-				temp->value = strdup(value);
-				if (temp->value == NULL)
-					return (0);
-				return (1);
-			}
-			temp = temp->next;
-		}
-		new_item->next = ht->array[index];
-		ht->array[index] = new_item;
-		return (1);
-	}
-	return (0);
+	new_item->next = ht->array[index];
+	ht->array[index] = new_item;
+	return (1);
 }
 /**
  * create_item - function to create items
