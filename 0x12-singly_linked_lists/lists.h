@@ -1,5 +1,5 @@
-#ifndef LISTS.H
-#define LISTS.H
+#ifndef LISTS_h
+#define LISTS_h
 
 typedef struct list_s
 {
